@@ -22,7 +22,7 @@ import {cheol} from "@/plugins/cheol";
 export default {
   name: "declarativeRendering",
   setup() {
-    const {router,store} = cheol()
+    const {$api,router,store} = cheol()
     const date = Date().toString()
     console.log(date)
 

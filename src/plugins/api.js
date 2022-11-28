@@ -44,7 +44,7 @@ export default {
                     console.log(error);
                 })
             app.config.globalProperties.$api = api
-            app.provide('api', api)
+            app.provide('$api', api)
         };
     },
     axios: _axios

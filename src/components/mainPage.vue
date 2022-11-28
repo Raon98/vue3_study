@@ -14,13 +14,15 @@ import {cheol} from "@/plugins/cheol";
 export default {
   name: "mainPage",
   setup() {
-    const {store,router} = cheol()
+    const {$api,store,router} = cheol()
 
     const pageMove = (name) => {
       router.push(name)
       console.log("NAME : [" + name + "]")
     }
-
+    $api('d','d',{},(res)=>{
+      //res.data
+    })
     return {pageMove }
   }
 }
