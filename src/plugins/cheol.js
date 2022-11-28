@@ -1,10 +1,10 @@
 
 import{useStore} from "vuex";
-import{useRoute} from "vue-router";
+import{useRouter} from "vue-router";
 
 export function cheol() {
     const store = useStore()
-    const router = useRoute()
+    const router = useRouter()
 
     return {store,
             router,

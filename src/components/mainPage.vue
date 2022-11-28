@@ -6,19 +6,21 @@
 </template>
 
 <script>
-import {router} from "@/router";
-import {ref} from "vue";
+
 import {cheol} from "@/plugins/cheol";
+
 
 
 export default {
   name: "mainPage",
   setup() {
-    const {store} = cheol()
+    const {store,router} = cheol()
+
     const pageMove = (name) => {
       router.push(name)
       console.log("NAME : [" + name + "]")
     }
+
     return {pageMove }
   }
 }

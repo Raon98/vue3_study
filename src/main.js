@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import {router} from './router'
-import store from './store'
+import api from "@/plugins/api";
+import store from './store/modules'
 import axios from "axios";
 import mitts from "mitt";
 
@@ -13,5 +14,6 @@ app.config.globalProperties.emitter = emitter;
 app.provide('emitter', emitter);
 
 app.use(router).use(store)
+app.use(api,{store,router})
 app.config.globalProperties.$axios = axios;
 app.mount('#app')
