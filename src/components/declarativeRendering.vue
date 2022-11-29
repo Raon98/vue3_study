@@ -12,6 +12,9 @@
     <hr/>
     <abbr v-bind:title="normal">{{abbr}}</abbr>
   </div>
+  <div>
+    <h3>git v </h3>
+  </div>
 </template>
 
 <script>
