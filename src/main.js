@@ -5,6 +5,7 @@ import api from "@/plugins/api";
 import store from './store/modules'
 import axios from "axios";
 import mitts from "mitt";
+import utils from "@/plugins/utils";
 
 const app = createApp(App)
     app.config.productionTip =false
@@ -15,5 +16,6 @@ app.provide('emitter', emitter);
 
 app.use(router).use(store)
 app.use(api,{store,router})
+app.use(utils,{store})
 app.config.globalProperties.$axios = axios;
 app.mount('#app')
