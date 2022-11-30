@@ -1,27 +1,27 @@
 # vue3 Basic Memo
 
 ### v-html 디렉티브를 이용한 HTML 표현
-```
+```vue
 - v-html 디렉티브는 HTML 엘리먼트의 innerHTML 값에 변수값을 전달해 HTML 마크업 언어로 표현
 - 변수는 반드시 HTML 평문이어야 하며, VUE의 문법을 사용해도 컴파일 되지않는다.
-    <div v-html="<i>HTML TEXT</i>"><div>
+    <div v-html="<i>HTML TEXT</i>"></div>
 ```
 
 ### v-pre 디렉티브를 이용한 컴파일 무시
-```
+```vue
 - v-pre 디렉티브를 이용하면 해당 엘리먼트를 포함한 모든 자식 엘리먼트들의 값을 컴파일 하지않는다.
  즉, 수염표기법으로 변수를 포기 하더라도 있는 그래도 출력이 된다.
-     <div>{{msg}}</div> = msg = HELLO
-     <div v-pre>{{msg}}</div> = msg = {{msg}}그대로 표현
+    <div>{{msg}}</div> = msg = HELLO
+    <div v-pre>{{msg}}</div> = msg = {{msg}}그대로 표현
 ```
 
 ### 데이터 결합을 통한 사용자 입력 처리
-```
+```vue
  [참조] declarativeRendering.Vue
  
 - 탭플릿 내에서 v-bind 디렉티브 혹은 v-model 디렉티브를 이용할 경우 컴포넌트에서 선언한 변수와 HTML 태그 속성을 결합할 수 있다.
     v-bind:HTML속성 = "변수명" === :HTML속성="변수명" (콜론대체가능)
-    => v-bind:title="title_value" , :title="title_value"
+    ⇒ v-bind:title="title_value" , :title="title_value"
  * v-bind 디렉티브 : 단방향 결합 지원
    v-model 디렉티브 : 양방향 결합 지원
  #단방향 결합 : 변수의 값이 템플릿으로만 결합되어 템플릿의 HTML 태그가 변경한 값이 변수에 돌아오지 않는다는 뜻
@@ -29,14 +29,14 @@
 ```
 
 ### v-model 디렉티브 수식어
-```
+```vue
  - v-model 디렉티브로 연결되는 변수명은 컴포넌트의 props에 정의하면 되는데, 변수명 뒤에 Modifiers라는 글자를 붙여
    props에 추가적으로 선언하면 사용자 수식어를 받아올 수 있다.
     props : [ "a" , "aModifiers" ]
 ```
 
 ### 이벤트 리스너를 이용한 사용자 입력 처리
-```
+```vue
  [참조] eventListenerEx
  - v-on 디렉티브는 HTML 태그뿐만 아니라 사용자가 만든 컴포넌트에서 발생된 이벤트를 캡쳐할 떄도 사용
    click = @click="스크립트 코드, 혹은 함수 호출"
@@ -54,3 +54,4 @@
  .right : 마우스의 오른쪽 버튼이 눌렀을 때 핸들러를 호출한다.
  .middle : 마우스의 가운데 버튼이 눌렀을 떄 핸들러를 호출한다.
 ```
+
