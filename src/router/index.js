@@ -10,13 +10,28 @@ const routes = [
     {
         path: '/',
         name: 'mainPage',
-        component: loadView('mainPage'), // 선언적 렌더링
+        component: loadView('mainPage'),
     },
     {
         path: '/declarativeRendering',
         name: 'declarative rendering',
-        component: loadView('declarativeRendering'), // 선언적 렌더링
+        component: loadView('declarativeRendering'),
     },
+    {
+        path: '/eventListnerEx',
+        name: 'eventListnerEx ',
+        component: loadView('eventListnerEx'),
+    },    {
+        path: '/v-ifEx',
+        name: 'v-ifEx',
+        component: loadView('v-ifEx'),
+    },    {
+        path: '/v-forEx',
+        name: 'v-forEx',
+        component: loadView('v-forEx'),
+    },
+
+
 
 ];
 

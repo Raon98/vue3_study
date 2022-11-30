@@ -2,6 +2,9 @@
   <div>
     <h2>메인페이지</h2>
     <button @click="pageMove('declarativeRendering')">선언적 렌더링</button>
+    <button @click="pageMove('eventListnerEx')">eventListnerEx 예제</button>
+    <button @click="pageMove('v-ifEx')">V-IF 예제</button>
+    <button @click="pageMove('v-forEx')">V-FOR 예제</button>
   </div>
 </template>
 
