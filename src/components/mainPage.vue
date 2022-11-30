@@ -8,7 +8,8 @@
 <script>
 
 import {cheol} from "@/plugins/cheol";
-
+import recordDt from "@/assets/json/record"
+import {computed} from "vue";
 
 
 export default {
@@ -16,13 +17,15 @@ export default {
   setup() {
     const {$api,store,router} = cheol()
 
+    const record = computed(()=> recordDt)
+    console.log(JSON.stringify(record.value))
     const pageMove = (name) => {
       router.push(name)
       console.log("NAME : [" + name + "]")
     }
-    $api('d','d',{},(res)=>{
-      //res.data
-    })
+    // $api('d','d',{},(res)=>{
+    //   //res.data
+    // })
     return {pageMove }
   }
 }
