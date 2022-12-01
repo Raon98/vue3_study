@@ -21,14 +21,19 @@ const routes = [
         path: '/eventListnerEx',
         name: 'eventListnerEx ',
         component: loadView('eventListnerEx'),
-    },    {
+    }, {
         path: '/v-ifEx',
         name: 'v-ifEx',
         component: loadView('v-ifEx'),
-    },    {
+    }, {
         path: '/v-forEx',
         name: 'v-forEx',
         component: loadView('v-forEx'),
+    },
+    {
+        path: '/computedEx',
+        name: 'computedEx',
+        component: loadView('computedEx'),
     },
 
 
