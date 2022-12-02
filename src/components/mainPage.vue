@@ -6,6 +6,7 @@
     <button @click="pageMove('v-ifEx')">V-IF 예제</button>
     <button @click="pageMove('v-forEx')">V-FOR 예제</button>
     <button @click="pageMove('computedEx')">computed 예제</button>
+    <button @click="pageMove('watchEx')">watch & watchEffect 예제</button>
   </div>
 </template>
 

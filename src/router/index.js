@@ -35,7 +35,11 @@ const routes = [
         name: 'computedEx',
         component: loadView('computedEx'),
     },
-
+    {
+        path: '/watchEx',
+        name: 'watchEx',
+        component: loadView('watchEx'),
+    },
 
 
 ];
