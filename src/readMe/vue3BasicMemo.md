@@ -128,3 +128,41 @@
                    pre : DOM이 업데이트하기 전에 콜백함수를 호출
                    post : DOM이 없데이트된 후 콜백함수를 호출                 
 ```
+
+###컴포너트 생성
+```vue
+ - 컴포넌트 시스템은 Vue의 매우 중요한 요소 중 하나로, 하나의 커다란 애플리케이션을 작은 요소로 분해해 은닉하고 재사용성을 가지게 해준다.
+  import { createAPP } from 'vue'
+  const app = createApp({/* 인스턴스 옵션들 */})
+
+  #component : 컴포넌트의 이름과 함수 혹은 객체로 이루어진 컴포넌트 정의를 인자로 받아 컴포넌트 생성
+  #config : 애플리케이션의 전역설정을 담당하는 객체로 mount 메서드가 불리기 전에 설정해야 된다.
+           1. errorHandler : 컴포넌트를 그리거나 감시할 때 에러가 발생하면 호출
+           2. warnHandler : Vue 에서 경고를 발생할 때 호출
+           3. globalProperties : 키와 값을 설정
+           4. isCustomElement : 특정한 조건을 설정하여 Vue에서 생성되지 않은 컴포넌트를 명시
+           5. optionMergeStrategies : 사용자 정의 속성이 있고, 부모 컴포넌트와 자식 컴포넌트가 해당 속성을 정의 했을 때 두 값을 어떻게 처리할 지 함수로 정의
+           6. performance : devtool의 performance/timeline 패널에 성늘 관련 정보를 추적할 수 있게 해준다.
+  #directive : 전역 사용자 디렉티브를 설정
+  #mixin : 전역에서 사용할 수 있는 mixin을 설정
+  #mount : 최상위 컴포넌트를 특정 DOM 엘리먼트에 장착
+  #provide : 모든 자식 컴포넌트가 inject할 수 있는 값을 provide
+  #unmount : 특정 DOM 엘리먼트 내 애플리케이션 인스턴스를 탈착
+  #use : Vue 플러그인 객체를 사용할 수 있게 한다.
+
+  * provide와 inject 개념
+    provide는 제공 inject 주입
+    기존 props는 부모에서 손자 component로 데이터를 전송할 시 여러번의 props의 사용이 필요하지만 이를 간단하게 하기위해
+    provide를 설정해두고 각 필요한 자손component에서 inject하여 데이터 사용
+
+ #Props
+ - 컴포넌트에 데이터를 넘겨줄 수 있는 사용자 지정 속성
+   props: ["name", "age" ]
+       *props 상세속성 
+        #type : 데이터 타입 정의
+        #default : 해당 Props가 들어오지 않을 경우 사용할 기본값을 갖는다. 
+                  *들어오는값이 Object일 경우 반드시 팩토리 함수를 이용해 값을 반환해야함
+        #required : true로 설정시 props값이 안들어오면 콘솔 경고창 표시
+        #validator : 잘못 들어온 인자를 개발자 코드로 직접 검사해 콘솔창에 경고를 낼 수 있다.
+    <my-component tilte="Component 1" :data="[1,2,3]"></my-component> 
+```
