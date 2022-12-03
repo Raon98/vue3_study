@@ -40,7 +40,16 @@ const routes = [
         name: 'watchEx',
         component: loadView('watchEx'),
     },
-
+    {
+        path: '/v-modelDirectiveEx',
+        name: 'v-modelDirectiveEx',
+        component: loadView('v-modelDirectiveEx'),
+    },
+    {
+        path: '/emitComponentEx',
+        name: 'emitComponentEx',
+        component: loadView('emitComponentEx'),
+    },
 
 ];
 

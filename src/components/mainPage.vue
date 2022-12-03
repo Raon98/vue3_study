@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="btn_style">
     <h2>메인페이지</h2>
     <button @click="pageMove('declarativeRendering')">선언적 렌더링</button>
     <button @click="pageMove('eventListnerEx')">eventListnerEx 예제</button>
@@ -7,6 +7,9 @@
     <button @click="pageMove('v-forEx')">V-FOR 예제</button>
     <button @click="pageMove('computedEx')">computed 예제</button>
     <button @click="pageMove('watchEx')">watch & watchEffect 예제</button>
+    <button @click="pageMove('v-modelDirectiveEx')">v-modelDirective 예제</button>
+    <button @click="pageMove('emitComponentEx')">emitComponent 예제</button>
+
   </div>
 </template>
 
@@ -37,7 +40,9 @@ export default {
 </script>
 
 <style scoped>
-  button {
-
+  .btn_style button {
+      margin: 10px;
+      padding: 5px;
+    background: antiquewhite;
   }
 </style>

@@ -181,3 +181,37 @@
     <p>RootNode Example</p>
    </Rootnode>
 ```
+
+### 사용자 이벤트 생성
+```vue
+  - 이벤트를 정의하기 위해서는 컴포넌트의 emits Option에 이벤트명을 지정하면 된다.
+    emits : ['myevent-1','myevent-2']
+  *주의할점 : 가능하면 항상 케밥형식의 소문자만 사용해야함
+   - 이벤트명은 낙타형식과 케밥형식 간 호환이 되지 않으며 모든 대문자를 자동으로 소문자로 변환
+  #Vue3가 발전함에 따라 이벤트 명 역시 낙타형식으로 지정해도 리스닝(listening)하는 컴포넌트에서 케밥형식으로 받을 수 있게 됐다.
+  #Emits 옵션의 값을 객체로 생성한 후, myevent-1이라는 키의 값으로 검증함수를 정의할 수 있다.
+    emits : {
+            'myevent-1' : ({name, value}) => {
+                  return name && value
+                }
+              }
+  -> myevent-1은 객체를 반환할 것이라 예상, 그 객체는 각각 name과 value라는 키를 가지고 있을것이다.
+  -> 이 함수는 name과 value의 값이 반드시 존재해야 올바른 이벤트로 처리한다.
+  
+ #v-model 디렉티브와 이벤트 결합 [참조] v-modelDirective
+  - 기본적으로 이 v-model 디렉티브에 연동된 벼수는 컴포넌트의 Props에 연동
+       <Component v-model:msg="Message"/>
+        Props: {msg : String}
+        => 이렇게 전달된 변수의 값은 컴포넌트 안에서 업데이트되어 변수를 전달한 부모 컴포넌트와 동기화
+       
+       emits: [ 'update:msg' ] 
+       $emit('update:msg',$event.target.value)
+        => 업데이트를 위해서는 update:msg와 같이 update: 라는 접두사와 변수명을 결합한 이벤트명을 이용할 수 있다.
+      
+       props: { msg: String, type: String }
+       $emit('update:msg', $event.target.value)
+       $emit('update:type', $event.target.value)
+        =>props에 v-model 디렉티브를 위한 변수를 여러 개 설정하고 emits에도 동일하게 설정하면 여러개의 값을 양방향 결합 가능
+
+      
+```
