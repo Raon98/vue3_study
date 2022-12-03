@@ -164,5 +164,20 @@
                   *들어오는값이 Object일 경우 반드시 팩토리 함수를 이용해 값을 반환해야함
         #required : true로 설정시 props값이 안들어오면 콘솔 경고창 표시
         #validator : 잘못 들어온 인자를 개발자 코드로 직접 검사해 콘솔창에 경고를 낼 수 있다.
-    <my-component tilte="Component 1" :data="[1,2,3]"></my-component> 
+    <my-component tilte="Component 1" :data="[1,2,3]"></my-component>
+ 
+ #Non-Props
+  - Class나 Style 그리고 id 속성 등은 대상 컴포넌트의 props나 emits 옵션에 정의되어 있지 않지만 대상 컴포넌트에 전달되어 필요한 역할을 함
+      => 이런식으로 props나 emits 옵션에 정의되지 않은 컴포넌트의 속성을 Non-Props 속성
+      => 이런속성은 스크립트 코드에서 $attrs를 이용해 접근 가능
+         <p>{{$attrs.title}}</p>
+  - Vue3 setup 컴포지션 함수에서 Non-Prop 속성에 접근하기 위해서는 setup 함수의 두 번째 매개변수인 context를 이용 
+      => context 매개변수는 attrs라는 속성을 가지고 있는데 이 속성이 Non-Prop의 정보를 가지고 있다.
+     setup(props, context) {
+        const tilte = context.attrs.tilte
+     }
+  - Non-Props 속성은 템플릿 내 루트 노드에 상속
+   <Rootnode>
+    <p>RootNode Example</p>
+   </Rootnode>
 ```
